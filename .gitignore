@@ -1,0 +1,5 @@
+# Ignore uploads directory
+wordpress/wp-content/uploads/*
+
+# Ignore upgrade directory
+wordpress/wp-content/upgrade/*
