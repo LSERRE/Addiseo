@@ -116,5 +116,30 @@ jQuery(document).ready(function($) {
   */
   loadGravatars();
 
+  var navToggle = false;
+
+  $( '.burger' ).on( 'click', function( e ) {
+      if( navToggle ){
+        TweenMax.to( $('.main-navigation'), 0.4, {
+          height: 63
+        });
+        TweenMax.to( $( this ), 0.4, {
+          rotation: 0
+        });
+        navToggle = false;
+      }else{
+        TweenMax.to( $('.main-navigation'), 0.4, {
+          height: 240
+        });
+        TweenMax.to( $( this ), 0.4, {
+          rotation: 90
+        });
+        navToggle = true;  
+      }
+
+
+      return false;
+  });
+
 
 }); /* end of as page load scripts */

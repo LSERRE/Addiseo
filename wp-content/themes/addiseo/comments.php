@@ -14,17 +14,17 @@ if ( post_password_required() ) {
 
   <?php if ( have_comments() ) : ?>
 
-    <h3 id="comments-title" class="h2"><?php comments_number( __( '<span>No</span> Comments', 'bonestheme' ), __( '<span>One</span> Comment', 'bonestheme' ), __( '<span>%</span> Comments', 'bonestheme' ) );?></h3>
+    <h3 id="comments-title" class="h2 comments-title">Comments</h3>
 
     <section class="commentlist">
       <?php
         wp_list_comments( array(
           'style'             => 'div',
           'short_ping'        => true,
-          'avatar_size'       => 40,
+          'avatar_size'       => 0,
           'callback'          => 'bones_comments',
           'type'              => 'all',
-          'reply_text'        => __('Reply', 'bonestheme'),
+          'reply_text'        => __('Répondre', 'bonestheme'),
           'page'              => '',
           'per_page'          => '',
           'reverse_top_level' => null,
@@ -46,5 +46,6 @@ if ( post_password_required() ) {
 
   <?php endif; ?>
 
-  <?php comment_form(); ?>
+  <?php $args = array('label_submit' => 'Valider'); ?>
+  <?php comment_form($args); ?>
 

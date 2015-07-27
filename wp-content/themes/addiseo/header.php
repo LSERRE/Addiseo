@@ -45,33 +45,48 @@
 		<div id="container">
 
 			<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+				<div class="header-wrapper">
+					<div id="inner-header" class="wrap cf">
 
-				<div id="inner-header" class="wrap cf">
+						<?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
+						<a class="logo" href="<?php echo home_url(); ?>" rel="nofollow"><img src="<?php echo get_template_directory_uri(); ?>/library/images/header-logo.png" alt=""></a>
 
-					<?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
-					<p id="logo" class="h1" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></p>
+						<?php // if you'd like to use the site description you can un-comment it below ?>
+						<?php // bloginfo('description'); ?>
 
-					<?php // if you'd like to use the site description you can un-comment it below ?>
-					<?php // bloginfo('description'); ?>
+						<div class="user-name">
+							<?php $current_user = wp_get_current_user(); ?>
+							<?php $firstLetter = substr ( $current_user->user_firstname, 0 , 1 ); ?>
+							<ul>
+								<li class="bold"><?php echo $firstLetter.".".$current_user->user_lastname; ?></li>
+								<?php if( is_user_logged_in() ) { ?>
+									<li><?php echo '<a href="'. wp_logout_url() .'">Déconnecter</a>'; ?></li>
+								<?php } ?>
+							</ul>
+						</div>
 
-
-					<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
-						<?php wp_nav_menu(array(
-    					         'container' => false,                           // remove nav container
-    					         'container_class' => 'menu cf',                 // class of container (should you choose to use it)
-    					         'menu' => __( 'The Main Menu', 'bonestheme' ),  // nav name
-    					         'menu_class' => 'nav top-nav cf',               // adding custom nav class
-    					         'theme_location' => 'main-nav',                 // where it's located in the theme
-    					         'before' => '',                                 // before the menu
-        			               'after' => '',                                  // after the menu
-        			               'link_before' => '',                            // before each link
-        			               'link_after' => '',                             // after each link
-        			               'depth' => 0,                                   // limit the depth of the nav
-    					         'fallback_cb' => ''                             // fallback function (if there is one)
-						)); ?>
-
-					</nav>
-
+					</div>
+					<div class="border-bottom"></div>
 				</div>
 
+				<nav class="main-navigation" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+					<div class="menu-wrapper cf wrap">
+						<a class="burger" href=""></a>
+						<?php wp_nav_menu(array(
+						         'container' => false,                           // remove nav container
+						         'container_class' => 'menu cf',                 // class of container (should you choose to use it)
+						         'menu' => __( 'Menu principal', 'bonestheme' ),  // nav name
+						         'menu_class' => 'nav top-nav cf wrap',               // adding custom nav class
+						         'theme_location' => 'main-nav',                 // where it's located in the theme
+						         'before' => '',                                 // before the menu
+	    			             'after' => '',                                  // after the menu
+	    			             'link_before' => '',                            // before each link
+	    			             'link_after' => '',                             // after each link
+	    			             'depth' => 0,                                   // limit the depth of the nav
+						         'fallback_cb' => ''                             // fallback function (if there is one)
+						)); ?>
+						</div>
+					<div class="group-logo"></div>
+					<div class="border-bottom"></div>
+				</nav>
 			</header>

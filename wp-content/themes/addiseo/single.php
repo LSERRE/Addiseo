@@ -43,6 +43,10 @@
 
 						<?php endif; ?>
 
+						<script>
+						    document.write('<a class="back-button" href="' + document.referrer + '">Back</a>');
+						</script>
+
 					</main>
 
 					<?php get_sidebar(); ?>
