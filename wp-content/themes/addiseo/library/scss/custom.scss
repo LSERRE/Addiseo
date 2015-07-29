@@ -553,12 +553,13 @@ SIDEBAR
 	margin-top: 0;
 	padding: 0 20px !important;
 	border-left: 5px solid #f8f8f8;
+	margin-bottom: 200px;
 
 	.utcw-tag {
 		font-weight: 600;
 		color: #3eb0c5;
 		text-decoration: none;
-		
+
 		 &:hover {
 		 	color: #a41f46;
 		 }
@@ -566,6 +567,121 @@ SIDEBAR
 
 	.widget {
 		margin: 20px 0;
+		padding: 0;
+
+		.widgettitle {
+			display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+			display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+			display: -ms-flexbox;      /* TWEENER - IE 10 */
+			display: -webkit-flex;     /* NEW - Chrome */
+			display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+			border-bottom: 0;
+
+			.true-title {
+				margin: 0;
+				height: 12px;
+				font-size: 18px;
+				color: #00a0b1;
+				text-transform: uppercase;
+				font-weight: 600;
+				margin-right: 5px;
+				line-height: 0.7em;
+			}
+
+			.border-right {
+				width: 100%;
+				height: 12px;
+				background: url("../images/nav-background.jpg");
+				-webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
+				-moz-box-flex: 1;         /* OLD - Firefox 19- */
+				width: 20%;               /* For old syntax, otherwise collapses. */
+				-webkit-flex: 1;          /* Chrome */
+				-ms-flex: 1;              /* IE 10 */
+				flex: 1;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+				line-height: 0.7em;
+			}
+		}
+
+		&.widget_text{
+			.textwidget {
+				border: 1px solid #00a0b1;
+				border-radius: 5px;
+				padding: 10px 13px;
+				box-sizing: border-box;
+				color: #00a3c0;
+				font-size: 13px;
+
+				h4 {
+					font-size: 16px;
+					margin-top: 25px;
+					margin-top: 5px;
+					margin-bottom: 2px;
+
+					&:first-of-type {
+						margin-top: 5px;
+					}
+				}
+			}
+		}
+
+		&.widget-meteo, &.widget-contacts {
+			.container {
+				border: 1px solid #00a0b1;
+				border-radius: 5px;
+				padding: 10px 10px;
+				box-sizing: border-box;
+				color: #00a3c0;
+				font-size: 13px;
+
+				.temp {
+					display: flex;
+					justify-content: space-between;
+
+					div {
+						font-size: 68px;
+					    font-weight: 600;
+					    line-height: 0em;
+					    letter-spacing: -4px;
+					    padding-top: 30px;
+					    margin-bottom: -50px;
+
+						sup {
+							font-size: 40px;
+						}
+					}
+
+					img {
+						width: 66px;
+						height: 64px;
+					}
+				}
+			}
+		}
+
+		&.widget-contacts {
+			ul {
+				margin-bottom: 30px;
+				li {
+					line-height: 0.6em;
+					font-size: 16px;
+					font-weight: 600;
+
+					a {
+						color: #00a3c0;
+						text-decoration: none;
+
+						&:hover {
+							color: #911231;
+						}
+					}
+				}
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
 
 		&:first-of-type {
 			margin-top: 0;
@@ -616,11 +732,11 @@ SIDEBAR
 				height: 12px;
 				background: url("../images/nav-background.jpg");
 				-webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
-				  -moz-box-flex: 1;         /* OLD - Firefox 19- */
-				  width: 20%;               /* For old syntax, otherwise collapses. */
-				  -webkit-flex: 1;          /* Chrome */
-				  -ms-flex: 1;              /* IE 10 */
-				  flex: 1;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+				-moz-box-flex: 1;         /* OLD - Firefox 19- */
+				width: 20%;               /* For old syntax, otherwise collapses. */
+				-webkit-flex: 1;          /* Chrome */
+				-ms-flex: 1;              /* IE 10 */
+				flex: 1;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
 
 				line-height: 0.7em;
 			}
