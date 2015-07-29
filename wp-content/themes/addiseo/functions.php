@@ -252,12 +252,21 @@ add_action('wp_enqueue_scripts', 'bones_fonts');
 add_action('wp_enqueue_scripts', 'add_js');
 
 
-add_action( 'init', 'blockusers_init' );
-function blockusers_init() {
-    if ( is_admin() && ! current_user_can( 'administrator' ) && ! ( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) {
-        wp_redirect( home_url() );
-        exit;
-    }
+// add_action( 'init', 'blockusers_init' );
+// function blockusers_init() {
+//     if ( is_admin() && ! current_user_can( 'administrator' ) && ! ( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) {
+//         wp_redirect( home_url() );
+//         exit;
+//     }
+// }
+
+
+add_action('admin_init', 'no_mo_dashboard');
+function no_mo_dashboard() {
+  if (!current_user_can('manage_options') && $_SERVER['DOING_AJAX'] != '/wp-admin/admin-ajax.php'  ) {
+  wp_redirect(home_url());
+  print_r($_SERVER);
+  }
 }
 
 add_action('after_setup_theme', 'remove_admin_bar');

@@ -37,10 +37,10 @@ if( $_SERVER['HTTP_HOST']=='addiseo.dev' ) {
  * Environment: Live
  */
 else {
-    define('DB_NAME', 'database_name');
-    define('DB_USER', 'database_user');
-    define('DB_PASSWORD', 'database_password');
-    define('DB_HOST', 'database_host');
+    define('DB_NAME', 'weseminaga001');
+    define('DB_USER', 'weseminaga001');
+    define('DB_PASSWORD', '6hXRQxhQYeVq');
+    define('DB_HOST', 'weseminaga001.mysql.db');
     define('DB_CHARSET', 'utf8');
     define('DB_COLLATE', '');
 }

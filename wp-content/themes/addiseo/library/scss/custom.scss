@@ -46,7 +46,11 @@ HEADER
 	
 				ul {
 					margin: 0;
-					display: flex;
+					display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+					display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+					display: -ms-flexbox;      /* TWEENER - IE 10 */
+					display: -webkit-flex;     /* NEW - Chrome */
+					display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
 					color: #fff;
 	
 					li:last-child {
@@ -180,6 +184,10 @@ CONTENT
 ****************************
 ***************************/
 
+#main {
+	padding-bottom: 150px;
+}
+
 #content {
 	margin-top: 50px;
 
@@ -191,16 +199,16 @@ CONTENT
 	}
 
 	article.hentry {
-		display: flex;
+	  	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	  	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	  	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	  	display: -webkit-flex;     /* NEW - Chrome */
+	  	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
 		border: none;
 		margin-bottom: 40px;
 
 		.attachment-article-thumbnail {
 			margin-right: 10px;
-		}
-
-		.content-wrapper {
-			
 		}
 
 		.article-header{
@@ -218,6 +226,7 @@ CONTENT
 				margin-top: 5px;
 				font-size: 18px;
 				color: #9d062b;
+				text-transform: lowercase;
 
 				a {
 					color: #9d062b;
@@ -285,6 +294,101 @@ CONTENT
 			text-decoration: underline;
 		}
 	}
+
+	/***************************
+	PARTICIPANT
+	***************************/
+
+	article.participant {
+		display: block;
+
+		.article-header {
+			display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+			display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+			display: -ms-flexbox;      /* TWEENER - IE 10 */
+			display: -webkit-flex;     /* NEW - Chrome */
+			display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+			.content-wrapper {
+				border-top: 5px solid #911231;
+				border-image: url('../images/red-background.jpg') 15% round;
+				border-bottom:0;
+				border-left:0;
+				border-right:0;
+				width: 100%;
+				-webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
+				-moz-box-flex: 1;         /* OLD - Firefox 19- */
+				width: 20%;               /* For old syntax, otherwise collapses. */
+				-webkit-flex: 1;          /* Chrome */
+				-ms-flex: 1;              /* IE 10 */
+				flex: 1;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+			}
+
+			h1 {
+				padding-top: 10px;
+				margin-top: -5px;
+				font-size: 19px;
+
+				&::first-letter {
+					text-transform: uppercase;
+				}
+
+				.lastname {
+					display: inline-block;
+
+					&::first-letter {
+						text-transform: uppercase;
+					}
+				}
+			}
+
+			h2 {
+				font-size: 19px;
+				color: #bababa;
+				margin: 0;
+				font-weight: 600;
+			}
+
+			h3 {
+				font-size: 19px;
+				color: #484848;
+				margin: 0;
+				font-weight: 600;
+			}
+		}
+
+		img {
+			margin-right: 10px;
+		}
+	}
+
+	.questions {
+		margin-top: 30px;
+
+		li {
+			p {
+				font-size: 16px;
+				&.question {
+					font-weight: 600;
+					color: #00a3c0;
+					margin-bottom: 3px;
+
+					&:before {
+						content: 'Q. ';
+					}
+				}
+
+				&.answer {
+					color: #5a5a5a;
+
+					&:before {
+						content: 'A. ';
+					}
+				}
+			}
+		}
+	}
+
 }
 
 /****************************
@@ -320,8 +424,11 @@ SINGLE POST
 
 .comment-respond{
     padding: 0 0 20px 0;
-    border-top: none;
 	border-bottom: 5px solid #911231;
+	border-image: url('../images/red-background.jpg') 15% round;
+	border-top:0;
+	border-left:0;
+	border-right:0;
 }
 
 #comments-title {
@@ -451,11 +558,112 @@ SIDEBAR
 		font-weight: 600;
 		color: #3eb0c5;
 		text-decoration: none;
+		
+		 &:hover {
+		 	color: #a41f46;
+		 }
 	}
 
 	.widget {
+		margin: 20px 0;
+
 		&:first-of-type {
 			margin-top: 0;
+		}
+	}
+
+	.whoiswho {
+	    width: 100%;
+	    display: block;
+	    max-width: 400px;
+	    margin: 0 auto;
+	    background: url("../images/nav-background.jpg");
+	    padding: 25px 10px;
+	    color: #fff;
+	    text-transform: uppercase;
+	    border-radius: 5px;
+	    text-decoration: none;
+	    font-weight: bold;
+	    font-size: 16px;
+	    text-align: center;
+
+	    &:hover {
+	    	background: url("../images/red-background.jpg");
+	    	color: #fff;
+	    }
+	}
+
+	.widget-ateliers {
+		.title-wrapper {
+			display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+			display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+			display: -ms-flexbox;      /* TWEENER - IE 10 */
+			display: -webkit-flex;     /* NEW - Chrome */
+			display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+			.widget-title {
+				margin: 0;
+				height: 12px;
+				font-size: 18px;
+				color: #00a0b1;
+				text-transform: uppercase;
+				font-weight: 600;
+				margin-right: 5px;
+				line-height: 0.7em;
+			}
+
+			.border {
+				height: 12px;
+				background: url("../images/nav-background.jpg");
+				-webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
+				  -moz-box-flex: 1;         /* OLD - Firefox 19- */
+				  width: 20%;               /* For old syntax, otherwise collapses. */
+				  -webkit-flex: 1;          /* Chrome */
+				  -ms-flex: 1;              /* IE 10 */
+				  flex: 1;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+				line-height: 0.7em;
+			}
+		}
+
+		form {
+			margin-top: 10px;
+			border: 1px solid #00a0b1;
+			border-radius: 5px;
+			padding: 10px 10px;
+			box-sizing: border-box;
+
+			p:first-of-type {
+				margin: 0;
+				font-size: 14px;
+				color: #00a0b1;
+				margin-bottom: 10px;
+			}
+
+			select {
+				background: #fff;
+				color: #00a0b1;
+				font-size: 16px;
+				border: 1px solid #00a0b1;
+				border-radius: 5px;
+				background-image: url("../images/arrow-dropdown.jpg");
+			    background-repeat: no-repeat;
+			    background-position: 97.5% center;
+			    height: 32px;
+    			background-size: auto 100%;
+    			width: 100%;
+			}
+
+			input[type="submit"] {
+				background: #fff;
+				width: 100%;
+				color: #00a0b1;
+				border: 1px solid #00a0b1;
+				border-radius: 5px;
+				font-size: 16px;
+				text-transform: uppercase;
+				font-weight: 600;
+			}
 		}
 	}
 }
@@ -518,6 +726,19 @@ SIDEBAR
 			display: block;
 		}
 	}
+
+	.sidebar {
+		.widget-ateliers {
+			form {
+				select {
+					height: 25px;
+    				margin: 10px auto;
+    				width: 100% !important;
+    				max-width: 100%;
+				}
+			}
+		}
+	}
 }
 	
 @media only screen and (max-width: 767px){
@@ -543,6 +764,16 @@ SIDEBAR
 
 			.attachment-article-thumbnail {
 				margin-bottom: 20px;
+			}
+		}
+
+		article.participant {
+			.article-header {
+				display: block;
+
+				.content-wrapper {
+					border: none;
+				}
 			}
 		}
 	}
