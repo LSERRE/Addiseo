@@ -473,6 +473,7 @@ function croppExcerpt() {
   $excerpt = substr($excerpt, 0, 210);
   $excerpt = substr($excerpt, 0, strripos($excerpt, " "));
   $excerpt = trim(preg_replace( '/\s+/', ' ', $excerpt));
+  $permalink = get_permalink( $post->ID );
   $excerpt = $excerpt.' ... <a class="read-more bold" href="'.$permalink.'">Lire la suite</a>';
   return $excerpt;
 }

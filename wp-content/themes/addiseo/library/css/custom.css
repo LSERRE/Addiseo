@@ -390,6 +390,7 @@ CONTENT
 }
 /* line 385, ../scss/custom.scss */
 #content .filters select option {
+  height: auto;
   color: #6d6d6d;
   line-height: 1.0em;
   margin-bottom: 0;
@@ -399,33 +400,37 @@ CONTENT
   padding: 0px;
   font-size: 10px;
 }
-/* line 396, ../scss/custom.scss */
+/* line 397, ../scss/custom.scss */
 #content .filters select.letter-select {
   width: 120px;
 }
-/* line 402, ../scss/custom.scss */
+/* line 401, ../scss/custom.scss */
+#content .filters select.area-select {
+  width: 220px;
+}
+/* line 407, ../scss/custom.scss */
 #content .questions {
   margin-top: 30px;
 }
-/* line 406, ../scss/custom.scss */
+/* line 411, ../scss/custom.scss */
 #content .questions li p {
   font-size: 16px;
 }
-/* line 408, ../scss/custom.scss */
+/* line 413, ../scss/custom.scss */
 #content .questions li p.question {
   font-weight: 600;
   color: #00a3c0;
   margin-bottom: 3px;
 }
-/* line 413, ../scss/custom.scss */
+/* line 418, ../scss/custom.scss */
 #content .questions li p.question:before {
   content: 'Q. ';
 }
-/* line 418, ../scss/custom.scss */
+/* line 423, ../scss/custom.scss */
 #content .questions li p.answer {
   color: #5a5a5a;
 }
-/* line 421, ../scss/custom.scss */
+/* line 426, ../scss/custom.scss */
 #content .questions li p.answer:before {
   content: 'A. ';
 }
@@ -433,35 +438,35 @@ CONTENT
 /****************************
 SINGLE POST
 ****************************/
-/* line 435, ../scss/custom.scss */
+/* line 440, ../scss/custom.scss */
 .single-post article.hentry {
   display: block !important;
 }
-/* line 438, ../scss/custom.scss */
+/* line 443, ../scss/custom.scss */
 .single-post article.hentry h1 {
   font-size: 27px !important;
   text-transform: uppercase;
   color: #00a3c0 !important;
   margin: 5px 0 10px 0;
 }
-/* line 445, ../scss/custom.scss */
+/* line 450, ../scss/custom.scss */
 .single-post article.hentry .entry-content p {
   font-family: "TitilliumWeb-SemiBold", sans-serif;
   font-size: 18px !important;
   color: #464646 !important;
   line-height: 1.6em !important;
 }
-/* line 451, ../scss/custom.scss */
+/* line 456, ../scss/custom.scss */
 .single-post article.hentry .entry-content p a {
   color: #00a3c0;
   text-decoration: none;
 }
-/* line 455, ../scss/custom.scss */
+/* line 460, ../scss/custom.scss */
 .single-post article.hentry .entry-content p a:hover {
   text-decoration: underline;
 }
 
-/* line 462, ../scss/custom.scss */
+/* line 467, ../scss/custom.scss */
 .comment-respond {
   padding: 0 0 20px 0;
   border-bottom: 5px solid #911231;
@@ -471,7 +476,7 @@ SINGLE POST
   border-right: 0;
 }
 
-/* line 471, ../scss/custom.scss */
+/* line 476, ../scss/custom.scss */
 #comments-title {
   font-family: "TitilliumWeb-WebBold", sans-serif;
   color: #9d062b;
@@ -482,7 +487,7 @@ SINGLE POST
   margin: 0;
   padding: 30px 0 0;
 }
-/* line 482, ../scss/custom.scss */
+/* line 487, ../scss/custom.scss */
 #comments-title:before {
   content: '';
   width: 41px;
@@ -494,51 +499,51 @@ SINGLE POST
   margin-top: -6px;
 }
 
-/* line 494, ../scss/custom.scss */
+/* line 499, ../scss/custom.scss */
 .comment {
   padding: 0;
   border-bottom: none;
 }
-/* line 498, ../scss/custom.scss */
+/* line 503, ../scss/custom.scss */
 .comment.even {
   background: none;
 }
-/* line 502, ../scss/custom.scss */
+/* line 507, ../scss/custom.scss */
 .comment .comment-author {
   margin: 0;
   padding: 0;
   margin-bottom: -10px;
 }
-/* line 507, ../scss/custom.scss */
+/* line 512, ../scss/custom.scss */
 .comment .comment-author p {
   margin-bottom: 0;
 }
-/* line 511, ../scss/custom.scss */
+/* line 516, ../scss/custom.scss */
 .comment .comment-author .author-name {
   font-size: 16px;
   color: #9d062b;
   font-weight: 600;
 }
-/* line 517, ../scss/custom.scss */
+/* line 522, ../scss/custom.scss */
 .comment .comment-author .date {
   color: #b2b2b2;
   font-size: 16px;
   font-weight: 600;
 }
-/* line 523, ../scss/custom.scss */
+/* line 528, ../scss/custom.scss */
 .comment .comment-author .comment-edit-link {
   font-style: inherit;
   color: #b2b2b2;
   font-size: 16px;
 }
-/* line 531, ../scss/custom.scss */
+/* line 536, ../scss/custom.scss */
 .comment .comment_content p {
   font-size: 16px;
   color: #464646;
   line-height: 1.6em;
   margin-bottom: 10px;
 }
-/* line 539, ../scss/custom.scss */
+/* line 544, ../scss/custom.scss */
 .comment .comment-reply-link {
   background-color: #fff;
   color: #911231;
@@ -550,7 +555,7 @@ SINGLE POST
   font-size: 13px;
 }
 
-/* line 551, ../scss/custom.scss */
+/* line 556, ../scss/custom.scss */
 .comment-form #submit {
   float: none !important;
   background-color: #fff;
@@ -563,22 +568,22 @@ SINGLE POST
   font-size: 13px;
 }
 
-/* line 563, ../scss/custom.scss */
+/* line 568, ../scss/custom.scss */
 .comment-reply-title {
   display: none;
 }
 
-/* line 567, ../scss/custom.scss */
+/* line 572, ../scss/custom.scss */
 .logged-in-as {
   display: none;
 }
 
-/* line 572, ../scss/custom.scss */
+/* line 577, ../scss/custom.scss */
 .comment-form-comment label {
   color: #464646;
   padding-bottom: 7px;
 }
-/* line 577, ../scss/custom.scss */
+/* line 582, ../scss/custom.scss */
 .comment-form-comment textarea {
   margin-top: 5px;
 }
@@ -588,29 +593,29 @@ SINGLE POST
 SIDEBAR
 ****************************
 ***************************/
-/* line 589, ../scss/custom.scss */
+/* line 594, ../scss/custom.scss */
 .sidebar {
   margin-top: 0;
   padding: 0 20px !important;
   border-left: 5px solid #f8f8f8;
   margin-bottom: 200px;
 }
-/* line 595, ../scss/custom.scss */
+/* line 600, ../scss/custom.scss */
 .sidebar .utcw-tag {
   font-weight: 600;
   color: #3eb0c5;
   text-decoration: none;
 }
-/* line 600, ../scss/custom.scss */
+/* line 605, ../scss/custom.scss */
 .sidebar .utcw-tag:hover {
   color: #a41f46;
 }
-/* line 605, ../scss/custom.scss */
+/* line 610, ../scss/custom.scss */
 .sidebar .widget {
   margin: 20px 0;
   padding: 0;
 }
-/* line 609, ../scss/custom.scss */
+/* line 614, ../scss/custom.scss */
 .sidebar .widget .widgettitle {
   display: -webkit-box;
   /* OLD - iOS 6-, Safari 3.1-6 */
@@ -624,7 +629,7 @@ SIDEBAR
   /* NEW, Spec - Opera 12.1, Firefox 20+ */
   border-bottom: 0;
 }
-/* line 617, ../scss/custom.scss */
+/* line 622, ../scss/custom.scss */
 .sidebar .widget .widgettitle .true-title {
   margin: 0;
   height: 12px;
@@ -635,7 +640,7 @@ SIDEBAR
   margin-right: 5px;
   line-height: 0.7em;
 }
-/* line 628, ../scss/custom.scss */
+/* line 633, ../scss/custom.scss */
 .sidebar .widget .widgettitle .border-right {
   width: 100%;
   height: 12px;
@@ -654,7 +659,7 @@ SIDEBAR
   /* NEW, Spec - Opera 12.1, Firefox 20+ */
   line-height: 0.7em;
 }
-/* line 644, ../scss/custom.scss */
+/* line 649, ../scss/custom.scss */
 .sidebar .widget.widget_text .textwidget {
   border: 1px solid #00a0b1;
   border-radius: 5px;
@@ -663,18 +668,18 @@ SIDEBAR
   color: #00a3c0;
   font-size: 13px;
 }
-/* line 652, ../scss/custom.scss */
+/* line 657, ../scss/custom.scss */
 .sidebar .widget.widget_text .textwidget h4 {
   font-size: 16px;
   margin-top: 25px;
   margin-top: 5px;
   margin-bottom: 2px;
 }
-/* line 658, ../scss/custom.scss */
+/* line 663, ../scss/custom.scss */
 .sidebar .widget.widget_text .textwidget h4:first-of-type {
   margin-top: 5px;
 }
-/* line 666, ../scss/custom.scss */
+/* line 671, ../scss/custom.scss */
 .sidebar .widget.widget-meteo .container, .sidebar .widget.widget-contacts .container, .sidebar .widget.widget-yammer .container {
   border: 1px solid #00a0b1;
   border-radius: 5px;
@@ -683,7 +688,7 @@ SIDEBAR
   color: #00a3c0;
   font-size: 13px;
 }
-/* line 674, ../scss/custom.scss */
+/* line 679, ../scss/custom.scss */
 .sidebar .widget.widget-meteo .container .temp, .sidebar .widget.widget-contacts .container .temp, .sidebar .widget.widget-yammer .container .temp {
   display: -webkit-box;
   /* OLD - iOS 6-, Safari 3.1-6 */
@@ -697,7 +702,7 @@ SIDEBAR
   /* NEW, Spec - Opera 12.1, Firefox 20+ */
   justify-content: space-between;
 }
-/* line 682, ../scss/custom.scss */
+/* line 687, ../scss/custom.scss */
 .sidebar .widget.widget-meteo .container .temp div, .sidebar .widget.widget-contacts .container .temp div, .sidebar .widget.widget-yammer .container .temp div {
   font-size: 68px;
   font-weight: 600;
@@ -706,26 +711,26 @@ SIDEBAR
   padding-top: 30px;
   margin-bottom: -50px;
 }
-/* line 690, ../scss/custom.scss */
+/* line 695, ../scss/custom.scss */
 .sidebar .widget.widget-meteo .container .temp div sup, .sidebar .widget.widget-contacts .container .temp div sup, .sidebar .widget.widget-yammer .container .temp div sup {
   font-size: 40px;
 }
-/* line 695, ../scss/custom.scss */
+/* line 700, ../scss/custom.scss */
 .sidebar .widget.widget-meteo .container .temp img, .sidebar .widget.widget-contacts .container .temp img, .sidebar .widget.widget-yammer .container .temp img {
   width: 66px;
   height: 64px;
 }
-/* line 703, ../scss/custom.scss */
+/* line 708, ../scss/custom.scss */
 .sidebar .widget.widget-yammer {
   font-size: 14px;
 }
-/* line 706, ../scss/custom.scss */
+/* line 711, ../scss/custom.scss */
 .sidebar .widget.widget-yammer img {
   float: left;
   margin-right: 5px;
   margin-bottom: 3px;
 }
-/* line 712, ../scss/custom.scss */
+/* line 717, ../scss/custom.scss */
 .sidebar .widget.widget-yammer a {
   display: block;
   color: #00a0b1;
@@ -733,42 +738,42 @@ SIDEBAR
   font-weight: bold;
   margin-top: 4px;
 }
-/* line 719, ../scss/custom.scss */
+/* line 724, ../scss/custom.scss */
 .sidebar .widget.widget-yammer a:hover {
   color: #9d062b;
 }
-/* line 723, ../scss/custom.scss */
+/* line 728, ../scss/custom.scss */
 .sidebar .widget.widget-yammer a:before {
   content: '> ';
 }
-/* line 730, ../scss/custom.scss */
+/* line 735, ../scss/custom.scss */
 .sidebar .widget.widget-contacts ul {
   margin-bottom: 30px;
 }
-/* line 732, ../scss/custom.scss */
+/* line 737, ../scss/custom.scss */
 .sidebar .widget.widget-contacts ul li {
   line-height: 0.6em;
   font-size: 16px;
   font-weight: 600;
 }
-/* line 737, ../scss/custom.scss */
+/* line 742, ../scss/custom.scss */
 .sidebar .widget.widget-contacts ul li a {
   color: #00a3c0;
   text-decoration: none;
 }
-/* line 741, ../scss/custom.scss */
+/* line 746, ../scss/custom.scss */
 .sidebar .widget.widget-contacts ul li a:hover {
   color: #911231;
 }
-/* line 747, ../scss/custom.scss */
+/* line 752, ../scss/custom.scss */
 .sidebar .widget.widget-contacts ul:last-child {
   margin-bottom: 0;
 }
-/* line 753, ../scss/custom.scss */
+/* line 758, ../scss/custom.scss */
 .sidebar .widget:first-of-type {
   margin-top: 0;
 }
-/* line 758, ../scss/custom.scss */
+/* line 763, ../scss/custom.scss */
 .sidebar .whoiswho {
   width: 100%;
   display: block;
@@ -784,12 +789,12 @@ SIDEBAR
   font-size: 16px;
   text-align: center;
 }
-/* line 773, ../scss/custom.scss */
+/* line 778, ../scss/custom.scss */
 .sidebar .whoiswho:hover {
   background: url("../images/red-background.jpg");
   color: #fff;
 }
-/* line 780, ../scss/custom.scss */
+/* line 785, ../scss/custom.scss */
 .sidebar .widget-ateliers .title-wrapper {
   display: -webkit-box;
   /* OLD - iOS 6-, Safari 3.1-6 */
@@ -802,7 +807,7 @@ SIDEBAR
   display: flex;
   /* NEW, Spec - Opera 12.1, Firefox 20+ */
 }
-/* line 787, ../scss/custom.scss */
+/* line 792, ../scss/custom.scss */
 .sidebar .widget-ateliers .title-wrapper .widget-title {
   margin: 0;
   height: 12px;
@@ -813,7 +818,7 @@ SIDEBAR
   margin-right: 5px;
   line-height: 0.7em;
 }
-/* line 798, ../scss/custom.scss */
+/* line 803, ../scss/custom.scss */
 .sidebar .widget-ateliers .title-wrapper .border {
   height: 12px;
   background: url("../images/nav-background.jpg");
@@ -831,7 +836,7 @@ SIDEBAR
   /* NEW, Spec - Opera 12.1, Firefox 20+ */
   line-height: 0.7em;
 }
-/* line 812, ../scss/custom.scss */
+/* line 817, ../scss/custom.scss */
 .sidebar .widget-ateliers form {
   margin-top: 10px;
   border: 1px solid #00a0b1;
@@ -839,14 +844,14 @@ SIDEBAR
   padding: 10px 10px;
   box-sizing: border-box;
 }
-/* line 819, ../scss/custom.scss */
+/* line 824, ../scss/custom.scss */
 .sidebar .widget-ateliers form p:first-of-type {
   margin: 0;
   font-size: 14px;
   color: #00a0b1;
   margin-bottom: 10px;
 }
-/* line 826, ../scss/custom.scss */
+/* line 831, ../scss/custom.scss */
 .sidebar .widget-ateliers form select {
   background: #fff;
   color: #00a0b1;
@@ -860,7 +865,7 @@ SIDEBAR
   background-size: auto 100%;
   width: 100%;
 }
-/* line 840, ../scss/custom.scss */
+/* line 845, ../scss/custom.scss */
 .sidebar .widget-ateliers form input[type="submit"] {
   background: #fff;
   width: 100%;
@@ -871,47 +876,47 @@ SIDEBAR
   text-transform: uppercase;
   font-weight: 600;
 }
-/* line 850, ../scss/custom.scss */
+/* line 855, ../scss/custom.scss */
 .sidebar .widget-ateliers form input[type="submit"]:hover {
   color: #9d062d;
   border-color: #9d062d;
 }
 
 @media only screen and (max-width: 1030px) {
-  /* line 861, ../scss/custom.scss */
+  /* line 866, ../scss/custom.scss */
   .header nav {
     height: 63px;
     overflow: hidden;
   }
-  /* line 865, ../scss/custom.scss */
+  /* line 870, ../scss/custom.scss */
   .header nav .menu-wrapper {
     position: relative;
   }
-  /* line 869, ../scss/custom.scss */
+  /* line 874, ../scss/custom.scss */
   .header nav ul {
     position: relative;
     padding-bottom: 50px;
   }
-  /* line 873, ../scss/custom.scss */
+  /* line 878, ../scss/custom.scss */
   .header nav ul li {
     display: block;
     float: none;
   }
-  /* line 877, ../scss/custom.scss */
+  /* line 882, ../scss/custom.scss */
   .header nav ul li a {
     float: none;
     font-size: 16px;
     line-height: 34px;
   }
-  /* line 883, ../scss/custom.scss */
+  /* line 888, ../scss/custom.scss */
   .header nav ul li:first-child:before {
     display: none;
   }
-  /* line 887, ../scss/custom.scss */
+  /* line 892, ../scss/custom.scss */
   .header nav ul li:nth-child(2) {
     margin-top: 15px;
   }
-  /* line 891, ../scss/custom.scss */
+  /* line 896, ../scss/custom.scss */
   .header nav ul li:before {
     content: '';
     display: block;
@@ -921,22 +926,22 @@ SIDEBAR
     background-color: #fff;
     margin: 16px 10px 0 0;
   }
-  /* line 901, ../scss/custom.scss */
+  /* line 906, ../scss/custom.scss */
   .header nav ul li:after {
     display: none;
     margin: 15px 10px 0 0;
   }
-  /* line 906, ../scss/custom.scss */
+  /* line 911, ../scss/custom.scss */
   .header nav ul li:hover {
     background: none;
   }
-  /* line 912, ../scss/custom.scss */
+  /* line 917, ../scss/custom.scss */
   .header .burger {
     z-index: 2;
     display: block;
   }
 
-  /* line 921, ../scss/custom.scss */
+  /* line 926, ../scss/custom.scss */
   .sidebar .widget-ateliers form select {
     height: 25px;
     margin: 10px auto;
@@ -945,37 +950,37 @@ SIDEBAR
   }
 }
 @media only screen and (max-width: 767px) {
-  /* line 934, ../scss/custom.scss */
+  /* line 939, ../scss/custom.scss */
   .header .header-wrapper {
     height: 275px;
   }
-  /* line 938, ../scss/custom.scss */
+  /* line 943, ../scss/custom.scss */
   .header .header-wrapper #inner-header .logo {
     margin-top: 70px;
   }
-  /* line 942, ../scss/custom.scss */
+  /* line 947, ../scss/custom.scss */
   .header .header-wrapper #inner-header .user-name {
     right: 15px;
   }
 
-  /* line 950, ../scss/custom.scss */
+  /* line 955, ../scss/custom.scss */
   #content article.hentry {
     flex-direction: column;
   }
-  /* line 953, ../scss/custom.scss */
+  /* line 958, ../scss/custom.scss */
   #content article.hentry .attachment-article-thumbnail {
     margin-bottom: 20px;
   }
-  /* line 959, ../scss/custom.scss */
+  /* line 964, ../scss/custom.scss */
   #content article.participant .article-header {
     display: block;
   }
-  /* line 962, ../scss/custom.scss */
+  /* line 967, ../scss/custom.scss */
   #content article.participant .article-header .content-wrapper {
     border: none;
   }
 
-  /* line 969, ../scss/custom.scss */
+  /* line 974, ../scss/custom.scss */
   .sidebar {
     padding: 0 !important;
     border-left: none;

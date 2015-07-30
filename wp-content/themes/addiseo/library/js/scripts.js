@@ -147,10 +147,23 @@ jQuery(document).ready(function($) {
       $(this).append( '<span class="true-title">'+ $value +'</span><span class="border-right"></span>' );
   });
 
-  $( '.letter-select' ).change( function(  ){
-    var letter = $( this ).val();
-    document.location.href = document.location.host + document.location.pathname + "?letter="+letter;
+  $( '.filters select' ).change( function(  ){
+    var letter = $( '.letter-select' ).val();
+    var area =  $( '.area-select' ).val();
+    if ( area == null ) {
+      area = "";
+    }
+    if ( letter == null ){
+      letter = "";
+    }
+    console.log(document.location);
+    document.location.href = document.location.host + document.location.pathname + "?letter="+letter+"&area="+area;
   });
+
+  // $( '.area-select' ).change( function(  ){
+  //   var area = $( this ).val();
+  //   document.location.href = document.location.host + document.location.pathname + "?area="+area;
+  // });
 
 
 }); /* end of as page load scripts */

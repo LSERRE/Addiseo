@@ -383,6 +383,7 @@ CONTENT
 			margin-bottom: 0;
 
 			option {
+				height: auto;
 				color: #6d6d6d;
 				line-height: 1.0em;
 				margin-bottom: 0;
@@ -395,6 +396,10 @@ CONTENT
 
 			&.letter-select {
 				width: 120px;
+			}
+
+			&.area-select {
+				width: 220px;
 			}
 		}
 	}
