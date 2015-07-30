@@ -477,11 +477,33 @@ function croppExcerpt() {
   return $excerpt;
 }
 
+add_filter('query_vars', 'parameter_queryvars' );
+function parameter_queryvars( $qvars )
+{
+  $qvars[] = 'firsttletter';
+  return $qvars;
+}
+
 function home_page_menu_args( $args ) {
   $args['show_home'] = true;
   return $args;
   }
 add_filter( 'wp_page_menu_args', 'home_page_menu_args' );
+
+add_filter('posts_where', 'letter_where' );
+
+function letter_where( $where )
+{
+    global $wp_query;
+    global $wpdb;
+
+    if( isset( $_GET['letter'] )) {
+
+      $letter = esc_attr($_GET['letter']);
+
+    }
+    return $where;
+}
 
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>

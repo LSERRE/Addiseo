@@ -19,20 +19,76 @@
 
 				<div id="inner-content" class="wrap cf">
 
-						<main id="main" class="m-all t-2of3 d-5of7 cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
-						<?php $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1; ?>
+					<main id="main" class="m-all t-2of3 d-5of7 cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+						<?php 
+						global $paged;
+                      	global $wp_query;
+					    global $wpdb;
 
-						<?php // Define the query
-					    	$args = array(
-						        'post_type' => 'participant',
-						        'posts_per_page' => 5,
+					    $letter = "";
+
+					    if( isset( $_GET['letter'] )) {
+
+					      $letter = esc_attr($_GET['letter']);
+
+							$postids = $wpdb->get_col($wpdb->prepare("
+								SELECT      ID
+								FROM        $wpdb->posts
+								WHERE       SUBSTR($wpdb->posts.post_title,1,1) = %s
+								AND 		$wpdb->posts.post_type = 'participant'
+								ORDER BY    $wpdb->posts.post_title",$letter));
+	
+							if ( $postids ) {
+								$args = array(
+									'post__in' => $postids,
+									'post_type' => 'participant',
+									'post_status' => 'publish',
+							        'posts_per_page' => 5,
+									'paged' => $paged,
+									'ignore_sticky_posts' => 1
+								);
+							}else {
+								$args = array(  );
+							}
+						} else {
+							// Define the query
+				    		$args = array(
+					    	    'post_type' => 'participant',
+					    	    'posts_per_page' => 5,
 								'paged' => $paged
-						    );
+					    	);
+						}
 
-						    $query = new WP_Query( $args );
+						$field_key = "field_55b69653c9163";
+				        $field = get_field_object($field_key);
+
+                      	$temp = $wp_query; 
+                      	$wp_query = null; 
+                      	$wp_query = new WP_Query($args); 
+
 		    			?>
 
-			        	<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+		    			<div class="filters">
+		    				<div class="filter_by"> Filtrer par :</div>
+		    				
+				            <select name="" id="" class="area-select">';
+				                <?php foreach( $field['choices'] as $k => $v ){ ?>
+				                    <option value='<?php echo $k; ?>'> <?php echo $v; ?> </option>;
+				                <?php } ?>
+				           	</select>
+
+		    				<select name="" id="" class="letter-select">
+		    					<?php foreach(range('a', 'z') as $letter2) { ?>
+		    						<optgroup>[a-z]</optgroup>
+   									<option <?php if(strtolower($letter) == $letter2){ echo "selected"; }?> > <?php echo $letter2; ?></option>'; 
+								<?Php } ?>
+		    				</select>
+
+		    			</div>
+	
+		        		<?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
+							<?php $user = get_field( 'utilisateur' ); ?>
+							<?php $userFirstLetter = substr($user["user_firstname"], 0, 1);  ?>
 
 							<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf participant' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
@@ -51,6 +107,8 @@
 										<h3 class="position"><?php the_field('position'); ?></h2>
 									</div> 	
 								</header>
+
+								<div class="clearfix"></div>
 
 								<section class="entry-content cf" itemprop="articleBody">
 									<ul class="questions">
@@ -81,13 +139,17 @@
 
 							</article>
 
-							<?php endwhile; ?>
 
-							<?php bones_page_navi(); ?>
+						<?php endwhile; ?>
 
-						</main>
+						<?php bones_page_navi(); ?>
+						<?php 
+                    	  	$wp_query = null; 
+                    	  	$wp_query = $temp; 
+                    	?>
+					</main>
 
-						<?php get_sidebar(); ?>
+					<?php get_sidebar(); ?>
 
 				</div>
 

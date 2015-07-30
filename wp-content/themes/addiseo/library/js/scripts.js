@@ -137,7 +137,6 @@ jQuery(document).ready(function($) {
         navToggle = true;  
       }
 
-
       return false;
   });
 
@@ -146,6 +145,11 @@ jQuery(document).ready(function($) {
       $value = $(this).html();
       $(this).html('');
       $(this).append( '<span class="true-title">'+ $value +'</span><span class="border-right"></span>' );
+  });
+
+  $( '.letter-select' ).change( function(  ){
+    var letter = $( this ).val();
+    document.location.href = document.location.host + document.location.pathname + "?letter="+letter;
   });
 
 

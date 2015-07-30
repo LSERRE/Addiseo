@@ -39,7 +39,7 @@ public function widget( $args, $instance ) {
                 $query = new WP_Query( $args ); 
             ?>
         
-            <form action="<?php bloginfo('siteurl'); ?>/wordpress/wp-admin/admin-post.php" method="POST">
+            <form action="<?php bloginfo('url'); ?>/wordpress/wp-admin/admin-post.php" method="POST">
                 <?php 
                     $current_user = wp_get_current_user();
                     $user_id = $current_user->data->ID;
@@ -49,9 +49,9 @@ public function widget( $args, $instance ) {
                     $values1 = get_field($repeater_field_key, 79);
                     $values2 = get_field($repeater_field_key, 80);
         
-                    $value0;
-                    $value1;
-                    $value2;
+                    $value0 = "";
+                    $value1 = "";
+                    $value2 = "";
         
                     if ( ! empty( $subtitle ) )
                     echo '<p class="widget-subtitle"> '.$subtitle.' </p>' ;
@@ -96,17 +96,17 @@ public function widget( $args, $instance ) {
                                 <option <?php 
                                             if($index1 === 0){
                                                 if($index2 === $value0){
-                                                    echo "selected";
+                                                    echo "selected class='active'";
                                                 }
                                             }
                                             if($index1 === 1){
                                                 if($index2 === $value1){
-                                                    echo "selected";
+                                                    echo "selected class='active'";
                                                 }
                                             }
                                             if($index1 === 2){
                                                 if($index2 === $value2){
-                                                    echo "selected";
+                                                    echo "selected class='active'";
                                                 }
                                             }
                                         ?>
