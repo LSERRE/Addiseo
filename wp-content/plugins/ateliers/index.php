@@ -84,13 +84,17 @@ public function widget( $args, $instance ) {
                             $value2 = $key1;
                         }
                     }
-                } 
+                }
+
                 ?>
+
+
                 
                 <?php $index1 = 0; ?>
+
                 <?php while ( $query->have_posts() ) : $query->the_post(); ?>
-                    <select name="horraire-<?php echo $index1; ?>" id="horraire">
-                        <option disabled="disabled" selected="selected"><?php the_title(); ?></option>
+                    <select class="<?php if($value0 !== "" && $index1 == 0) { echo 'active'; } if($value1 !== "" && $index1 == 1) { echo 'active'; } if($value2 !== "" && $index1 == 2) { echo 'active'; } ?>" name="horraire-<?php echo $index1; ?>" id="horraire">
+                        <option disabled="disabled" selected="selected" value=""><?php the_title(); ?></option>
                             <?php $index2 = 0; ?>
                             <?php if( have_rows('horraires') ): while ( have_rows('horraires') ) : the_row(); ?>
                                 <option <?php 
@@ -199,67 +203,54 @@ if( !function_exists( 'wp_get_post_type_link' )  ){
 add_action('admin_post_atelier_submission', 'check_for_event_submissions');
 
 function check_for_event_submissions(){
-  if(isset($_POST['horraire-0']))
-    {
-        $repeater_field_key = "horraires";
+    $repeater_field_key = "horraires";
 
-        $horraire0 = $_POST['horraire-0'];
-        $horraire1 = $_POST['horraire-1'];
-        $horraire2 = $_POST['horraire-2'];
-
-        $user_id   = $_POST['user_id'];
-        $user = get_user_by( 'id', $user_id );
-
-        $values0 = get_field($repeater_field_key, 76);
-        $values1 = get_field($repeater_field_key, 79);
-        $values2 = get_field($repeater_field_key, 80);
-
-        $flag;
-
-        $array = ( Array( "collaborateur" => $user ) );
-
-        foreach ($values0 as $key1 => $value) {
-            foreach ($values0[$key1]["collaborateurs"] as $key2  => $collaborateur) {
-                if($values0[$key1]["collaborateurs"][$key2]["collaborateur"]["ID"] == $user_id ) {
-                    unset($values0[$key1]["collaborateurs"][$key2]);
-                }
-            }
-            if( $key1 == $horraire0 ){
-                array_push($values0[$key1]["collaborateurs"], $array);
+    $horraire0 = $_POST['horraire-0'];
+    $horraire1 = $_POST['horraire-1'];
+    $horraire2 = $_POST['horraire-2'];
+    $user_id   = $_POST['user_id'];
+    $user = get_user_by( 'id', $user_id );
+    $values0 = get_field($repeater_field_key, 76);
+    $values1 = get_field($repeater_field_key, 79);
+    $values2 = get_field($repeater_field_key, 80);
+    $flag;
+    $array = ( Array( "collaborateur" => $user ) );
+    foreach ($values0 as $key1 => $value) {
+        foreach ($values0[$key1]["collaborateurs"] as $key2  => $collaborateur) {
+            if($values0[$key1]["collaborateurs"][$key2]["collaborateur"]["ID"] == $user_id ) {
+                unset($values0[$key1]["collaborateurs"][$key2]);
             }
         }
-
-        foreach ($values1 as $key1 => $value) {
-            foreach ($values1[$key1]["collaborateurs"] as $key2  => $collaborateur) {
-                if($values1[$key1]["collaborateurs"][$key2]["collaborateur"]["ID"] == $user_id ) {
-                    unset($values1[$key1]["collaborateurs"][$key2]);
-                }
-            }
-            if( $key1 == $horraire1 ){
-                array_push($values1[$key1]["collaborateurs"], $array);
-            }
+        if( $key1 == $horraire0 && $horraire0 != "" ){
+            array_push($values0[$key1]["collaborateurs"], $array);
         }
-
-        foreach ($values2 as $key1 => $value) {
-            foreach ($values2[$key1]["collaborateurs"] as $key2  => $collaborateur) {
-                if($values2[$key1]["collaborateurs"][$key2]["collaborateur"]["ID"] == $user_id ) {
-                    unset($values2[$key1]["collaborateurs"][$key2]);
-                }
-            }
-            if( $key1 == $horraire2 ){
-                array_push($values2[$key1]["collaborateurs"], $array);
-            }
-        }
-
-        $valuesIndex0 = array_values($values0); // 'reindex' array
-        $valuesIndex1 = array_values($values1); // 'reindex' array
-        $valuesIndex2 = array_values($values2); // 'reindex' array
-
-        update_field('horraires', $valuesIndex0, 76);
-        update_field('horraires', $valuesIndex1, 79);
-        update_field('horraires', $valuesIndex2, 80);
-
     }
+    foreach ($values1 as $key1 => $value) {
+        foreach ($values1[$key1]["collaborateurs"] as $key2  => $collaborateur) {
+            if($values1[$key1]["collaborateurs"][$key2]["collaborateur"]["ID"] == $user_id ) {
+                unset($values1[$key1]["collaborateurs"][$key2]);
+            }
+        }
+        if( $key1 == $horraire1 && $horraire1 != "" ){
+            array_push($values1[$key1]["collaborateurs"], $array);
+        }
+    }
+    foreach ($values2 as $key1 => $value) {
+        foreach ($values2[$key1]["collaborateurs"] as $key2  => $collaborateur) {
+            if($values2[$key1]["collaborateurs"][$key2]["collaborateur"]["ID"] == $user_id ) {
+                unset($values2[$key1]["collaborateurs"][$key2]);
+            }
+        }
+        if( $key1 == $horraire2 && $horraire2 != "" ){
+            array_push($values2[$key1]["collaborateurs"], $array);
+        }
+    }
+    $valuesIndex0 = array_values($values0); // 'reindex' array
+    $valuesIndex1 = array_values($values1); // 'reindex' array
+    $valuesIndex2 = array_values($values2); // 'reindex' array
+    update_field('horraires', $valuesIndex0, 76);
+    update_field('horraires', $valuesIndex1, 79);
+    update_field('horraires', $valuesIndex2, 80);
 
     wp_redirect( home_url() ); exit;
 }

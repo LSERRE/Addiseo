@@ -3516,7 +3516,12 @@ SIDEBAR
   padding-right: 52px;
   text-overflow: ellipsis;
 }
-/* line 882, ../scss/custom.scss */
+/* line 881, ../scss/custom.scss */
+.sidebar .widget-ateliers form select.active {
+  color: #00B243;
+  font-weight: 600;
+}
+/* line 887, ../scss/custom.scss */
 .sidebar .widget-ateliers form input[type="submit"] {
   background: #fff;
   width: 100%;
@@ -3527,47 +3532,47 @@ SIDEBAR
   text-transform: uppercase;
   font-weight: 600;
 }
-/* line 892, ../scss/custom.scss */
+/* line 897, ../scss/custom.scss */
 .sidebar .widget-ateliers form input[type="submit"]:hover {
   color: #9d062d;
   border-color: #9d062d;
 }
 
 @media only screen and (max-width: 1030px) {
-  /* line 903, ../scss/custom.scss */
+  /* line 908, ../scss/custom.scss */
   .header nav {
     height: 63px;
     overflow: hidden;
   }
-  /* line 907, ../scss/custom.scss */
+  /* line 912, ../scss/custom.scss */
   .header nav .menu-wrapper {
     position: relative;
   }
-  /* line 911, ../scss/custom.scss */
+  /* line 916, ../scss/custom.scss */
   .header nav ul {
     position: relative;
     padding-bottom: 50px;
   }
-  /* line 915, ../scss/custom.scss */
+  /* line 920, ../scss/custom.scss */
   .header nav ul li {
     display: block;
     float: none;
   }
-  /* line 919, ../scss/custom.scss */
+  /* line 924, ../scss/custom.scss */
   .header nav ul li a {
     float: none;
     font-size: 16px;
     line-height: 34px;
   }
-  /* line 925, ../scss/custom.scss */
+  /* line 930, ../scss/custom.scss */
   .header nav ul li:first-child:before {
     display: none;
   }
-  /* line 929, ../scss/custom.scss */
+  /* line 934, ../scss/custom.scss */
   .header nav ul li:nth-child(2) {
     margin-top: 15px;
   }
-  /* line 933, ../scss/custom.scss */
+  /* line 938, ../scss/custom.scss */
   .header nav ul li:before {
     content: '';
     display: block;
@@ -3577,22 +3582,22 @@ SIDEBAR
     background-color: #fff;
     margin: 16px 10px 0 0;
   }
-  /* line 943, ../scss/custom.scss */
+  /* line 948, ../scss/custom.scss */
   .header nav ul li:after {
     display: none;
     margin: 15px 10px 0 0;
   }
-  /* line 948, ../scss/custom.scss */
+  /* line 953, ../scss/custom.scss */
   .header nav ul li:hover {
     background: none;
   }
-  /* line 954, ../scss/custom.scss */
+  /* line 959, ../scss/custom.scss */
   .header .burger {
     z-index: 2;
     display: block;
   }
 
-  /* line 965, ../scss/custom.scss */
+  /* line 970, ../scss/custom.scss */
   .sidebar .widget-ateliers form select {
     height: 25px;
     margin: 10px auto;
@@ -3600,48 +3605,49 @@ SIDEBAR
     max-width: 100%;
   }
 
-  /* line 975, ../scss/custom.scss */
+  /* line 980, ../scss/custom.scss */
   article .content-wrapper {
     width: 100% !important;
   }
 
-  /* line 980, ../scss/custom.scss */
+  /* line 985, ../scss/custom.scss */
   #content article.hentry {
     flex-direction: column;
+    -webkit-flex-direction: column;
   }
-  /* line 983, ../scss/custom.scss */
+  /* line 989, ../scss/custom.scss */
   #content article.hentry .attachment-article-thumbnail {
     margin-bottom: 20px;
   }
-  /* line 989, ../scss/custom.scss */
+  /* line 995, ../scss/custom.scss */
   #content article.participant .article-header {
     display: block;
   }
-  /* line 992, ../scss/custom.scss */
+  /* line 998, ../scss/custom.scss */
   #content article.participant .article-header .content-wrapper {
     border: none;
   }
 }
 @media only screen and (max-width: 767px) {
-  /* line 1002, ../scss/custom.scss */
+  /* line 1008, ../scss/custom.scss */
   .header .header-wrapper {
     height: 275px;
   }
-  /* line 1006, ../scss/custom.scss */
+  /* line 1012, ../scss/custom.scss */
   .header .header-wrapper #inner-header .logo {
     margin-top: 70px;
   }
-  /* line 1010, ../scss/custom.scss */
+  /* line 1016, ../scss/custom.scss */
   .header .header-wrapper #inner-header .user-name {
     right: 15px;
   }
 
-  /* line 1017, ../scss/custom.scss */
+  /* line 1023, ../scss/custom.scss */
   .sidebar {
     padding: 0 !important;
     border-left: none;
   }
-  /* line 1021, ../scss/custom.scss */
+  /* line 1027, ../scss/custom.scss */
   .sidebar .widget.widget-contacts ul li {
     line-height: 1.6em;
   }

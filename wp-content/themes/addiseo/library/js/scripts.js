@@ -160,6 +160,8 @@ jQuery(document).ready(function($) {
     document.location.href = document.location.host + document.location.pathname + "?letter="+letter+"&area="+area;
   });
 
+  $(".widget-ateliers select option.active").css("color", "red");
+
   // $( '.area-select' ).change( function(  ){
   //   var area = $( this ).val();
   //   document.location.href = document.location.host + document.location.pathname + "?area="+area;

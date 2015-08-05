@@ -877,6 +877,11 @@ SIDEBAR
     			width: 100%;
     			padding-right: 52px;
     			text-overflow: ellipsis;
+
+    			&.active {
+    				color: #00B243;
+    				font-weight: 600;
+    			}
 			}
 
 			input[type="submit"] {
@@ -979,6 +984,7 @@ SIDEBAR
 	#content {
 		article.hentry {
 			flex-direction: column;
+			-webkit-flex-direction: column;
 
 			.attachment-article-thumbnail {
 				margin-bottom: 20px;
