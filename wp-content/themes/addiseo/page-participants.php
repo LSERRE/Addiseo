@@ -27,7 +27,7 @@
 
 					    $letter = "";
 
-					    if( isset( $_GET['letter'] ) && isset($_GET['area']) && $_GET['letter'] != "" && $_GET['area']!= "") {
+					    if( isset( $_GET['letter'] ) && isset($_GET['area']) && $_GET['letter'] != "" && $_GET['area']!= "" && $_GET['letter'] != "all" && $_GET['area']!= "all" ) {
 
 					      	$letter = esc_attr($_GET['letter']);
 					      	$area = esc_attr($_GET['area']);
@@ -60,7 +60,7 @@
 								$args = array(  );
 							}
 
-						} elseif( isset( $_GET['letter']) &&  $_GET['letter'] != ""){
+						} elseif( isset( $_GET['letter']) &&  $_GET['letter'] != "" && $_GET['letter'] != "all"){
 							$letter = esc_attr($_GET['letter']);
 							$postids = $wpdb->get_col($wpdb->prepare("
 								SELECT      ID
@@ -82,7 +82,7 @@
 							}	
 						}
 
-						elseif ( isset($_GET['area']) && $_GET['area'] != "") {
+						elseif ( isset($_GET['area']) && $_GET['area'] != "" && $_GET['area'] != "all") {
 
 							$area = esc_attr($_GET['area']);
 
@@ -122,6 +122,7 @@
 
 				            <select name="" id="" class="area-select">';
 				            	<option disabled selected > Area </option>
+				            	<option value="all"> Tous </option>
 					                <?php foreach( $field['choices'] as $k => $v ){ ?>
 					                    <option <?php if($v == $area) { echo "selected"; } ?>  value='<?php echo $k; ?>'> <?php echo $v; ?> </option>
 					                <?php } ?>
@@ -129,6 +130,7 @@
 
 		    				<select name="" id="" class="letter-select">
 		    					<option disabled selected >[a-z]</option>
+		    					<option value="all"> Tous </option>
 		    						<?php foreach(range('a', 'z') as $letter2) { ?>
    											<option <?php if(strtolower($letter) == $letter2){ echo "selected"; }?> > <?php echo $letter2; ?></option>
 									<?php } ?>
@@ -177,7 +179,7 @@
 											</li>
 											<li>
 												<p class="question">The natural talent you would like to be gifted with?</p>
-												<p class="answer"><?php the_field('talen'); ?></p>
+												<p class="answer"><?php the_field('talent'); ?></p>
 											</li>
 											<li>
 												<p class="question">Your favorite motto</p>

@@ -23,10 +23,10 @@
                   <h1 class="entry-title single-title bold" itemprop="headline" rel="bookmark"><?php the_title(); ?></h1>
 
                   <?php 
-                    if ( has_post_thumbnail() ) {
-                      the_post_thumbnail('addiseo-thumb-full');
-                    } 
-                  ?>
+                    if ( get_field( 'visuel' ) ) {
+                      $image = get_field( 'visuel' ); ?>
+                      <img src="<?php echo $image['url']; ?>" alt="" class="cover">
+                    <?php } ?>
 
                 </header> <?php // end article header ?>
 
